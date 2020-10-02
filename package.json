@@ -1,5 +1,5 @@
 {
-  "name": "IvyHacks",
+  "name": "ivyhacks",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "git@github.com:jordantsanz/IvyHacks.git",
@@ -8,12 +8,13 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "test": "eslint src",
-    "build": "yarn clean; NODE_ENV=production webpack --colors",
+    "build": "yarn clean; NODE_ENV=production webpack --colors; cp -f _redirects dist/",
     "clean": "rimraf dist",
     "deploy": "yarn build; surge -p dist -d ivyhacks.surge.sh; yarn clean"
-
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "autoprefixer": "^10.0.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^4.3.0",
@@ -28,6 +29,7 @@
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
+    "postcss": "^8.1.0",
     "postcss-loader": "^4.0.2",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
@@ -38,7 +40,16 @@
   "dependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
+    "axios": "^0.20.0",
     "babel-loader": "^8.1.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "lodash.debounce": "^4.0.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
