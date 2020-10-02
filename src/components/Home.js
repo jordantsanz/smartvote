@@ -24,17 +24,55 @@ findAddress = () => {
 }
 
 findElectionData = () => {
-  const address = this.findAddress();
-  console.log(address);
-  // const electionData = this.props.queryElectionData(address);
-  // console.log(electionData);
+  const addressList = this.props.location.address_components;
+  let component,
+    streetnum,
+    streetname,
+    city,
+    state,
+    niceAddress;
+  for (component of addressList) {
+    switch (component.types[0]) {
+      case 'street_number':
+        streetnum = component.short_name;
+        break;
+      case 'route':
+        streetname = `${component.short_name}.`;
+        break;
+      case 'locality':
+        city = component.short_name;
+        break;
+      case 'administrative_area_level_1':
+        state = component.short_name;
+        break;
+      default:
+        break;
+    }
+    niceAddress = `${streetnum} ${streetname} ${city} ${state}`;
+  }
+
+  const electionData = this.props.queryElectionData(niceAddress);
+  console.log(electionData);
 };
+
+renderAddress = () => {
+  if (this.props.location.address === null || this.props.location.address === undefined) {
+    return (
+      <div>Loading...</div>
+    );
+  } else {
+    return (
+      <div className="address">{this.props.location.address}</div>
+    );
+  }
+}
 
 render() {
   return (
     <div className="home-page-wrapper">
       <button type="button" className="query-elections" onClick={this.findElectionData}> Query elections </button>
       <RenderedElectionData electionData={this.props.electionData} />
+      {this.renderAddress()}
     </div>
   );
 }
@@ -44,6 +82,7 @@ function mapStateToProps(reduxState) {
   return {
     // address: reduxState.address,
     electionData: reduxState.electionData.contests,
+    location: reduxState.location,
   };
 }
 export default connect(mapStateToProps, { queryElectionData, calculateAddress })(Home);

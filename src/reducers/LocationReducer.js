@@ -2,18 +2,18 @@ import { ActionTypes } from '../actions';
 
 const initialState = {
   address: '',
+  address_components: [],
 };
 
 const locationReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case ActionTypes.GET_ADDRESS:
       return {
-        contests: action.payload.address,
+        address: action.payload.formatted_address, address_components: action.payload.address_components,
       };
     default:
       return {
-        contests: initialState.address,
+        address: initialState.address,
       };
   }
 };

@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const electionDataReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case ActionTypes.GET_ELECTION_DATA:
       return {
