@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import dotenv from 'dotenv';
 import { createStore, applyMiddleware, compose } from 'redux';
 import './style.scss';
 
 import reducers from './reducers';
 
 import App from './components/app';
+
+require('dotenv').config();
+
+dotenv.config({
+  silent: true,
+});
 
 const store = createStore(reducers, {}, compose(
   applyMiddleware(thunk),

@@ -7,11 +7,11 @@ export const ActionTypes = {
 
 const CIVIC_API_URL = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
 const GEOCODING_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
-const REACT_APP_GOOGLE_API_KEY = 'AIzaSyBDdtNVjCqlyoW2D9d82LuBzbWFxa9W8qE';
+const GOOGLE_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export function queryElectionData(address) {
   const params = {
-    key: REACT_APP_GOOGLE_API_KEY,
+    key: GOOGLE_KEY,
     address,
     electionId: 2000,
   };
@@ -31,7 +31,7 @@ export function queryElectionData(address) {
 export function calculateAddress(longitude, latitude) {
   return (dispatch) => {
     const params = {
-      key: REACT_APP_GOOGLE_API_KEY,
+      key: GOOGLE_KEY,
       // eslint-disable-next-line new-cap
       result_type: 'street_address',
     };
