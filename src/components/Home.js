@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { queryElectionData, calculateAddress } from '../actions';
 import RenderedElectionData from './RenderedElectionData';
+import Sliders from './Sliders';
 
 class Home extends Component {
   componentDidMount() {
@@ -33,6 +34,7 @@ findElectionData = () => {
 render() {
   return (
     <div className="home-page-wrapper">
+      <Sliders />
       <button type="button" className="query-elections" onClick={this.findElectionData}> Query elections </button>
       <RenderedElectionData electionData={this.props.electionData} />
     </div>
