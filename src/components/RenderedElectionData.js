@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 
+import ElectionCard from './ElectionCard';
+
 class RenderedElectionData extends Component {
     electionDataRender = () => {
       console.log(this.props.electionData);
       if (this.props.electionData !== []) {
         return (
           this.props.electionData.map(((election) => {
-            return (
-              <div key={election.id} className="election">
-                {election.office}
-              </div>
-            );
-          }))
+            // not expanded version
+            if (election.type === 'General') {
+              return (
+                <ElectionCard election={election} />
+              );
+            } else {
+              return (
+                <div className="blank" />
+              );
+            }
+          }
+          ))
         );
       } else {
         return (

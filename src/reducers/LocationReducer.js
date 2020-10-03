@@ -13,7 +13,7 @@ const locationReducer = (state = initialState, action) => {
       };
     default:
       return {
-        address: initialState.address,
+        address: state.address, address_components: state.address_components,
       };
   }
 };
