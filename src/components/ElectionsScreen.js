@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
@@ -49,6 +50,12 @@ submitChecks = () => {
   console.log(electionsOfInterest);
 }
 
+candidatesList = (election) => {
+  return election.candidates.map((candidate) => {
+    return <div className="candidate-name">{candidate.name}</div>;
+  });
+}
+
 electionDataRender = () => {
   return (
     this.props.electionData.map(((election, index) => {
@@ -57,8 +64,17 @@ electionDataRender = () => {
         return (
         // eslint-disable-next-line react/no-array-index-key
           <div className="checkbox-card" key={index}>
-            <input type="checkbox" id={index} onChange={this.handleCheckboxChange} />
             <h1 className="election-title">{election.office} </h1>
+            <div className="red-line" />
+            <div className="candidates-list">
+              {this.candidatesList(election)}
+
+              <label className="container" name="checkbox">
+                <input type="checkbox" id={index} onChange={this.handleCheckboxChange} />
+                <span className="checkmark" />
+              </label>
+            </div>
+
           </div>
         );
       } else {
@@ -73,18 +89,21 @@ electionDataRender = () => {
 
 render() {
   return (
-    <div className="page-wrapper" id="page-4">
-      <h1 className="title" id="page-4-title">Here&apos;s a list of your upcoming elections...</h1>
-      <div className="button-holder">
-        <button className="button" type="button" id="select-all" onClick={this.selectAll}>Select all</button>
-        <button className="button" type="button" id="deselect-all" onClick={this.deselectAll}>Deselect all</button>
+    <div className="page-wrapper" id="page-5">
+      <div className="main-page-holder">
+        <h1 className="title" id="page-5-title">Here&apos;s a list of your upcoming elections...</h1>
+        <div className="paragraph" id="tell-us-which">Tell us which elections you want us to generate recommendations for by selecting their checkbox.</div>
+        <div className="button-holders" id="page-5-button-holder">
+          <button className="button-white" type="button" id="select-all" onClick={this.selectAll}>Deselect all</button>
+          <button className="button-red" type="button" id="deselect-all" onClick={this.deselectAll}>Select all</button>
+        </div>
+        <div className="checkbox-cards-list">
+          {this.electionDataRender()}
+        </div>
+        <NavLink className="button-nav" to="/aboutyou">
+          <button type="button" className="button-red" id="fixed-button" onClick={this.submitChecks}>Continue</button>
+        </NavLink>
       </div>
-      <div className="checkbox-cards-list">
-        {this.electionDataRender()}
-      </div>
-      <NavLink to="/aboutyou">
-        <button type="button" onClick={this.submitChecks}>Continue</button>
-      </NavLink>
     </div>
   );
 }

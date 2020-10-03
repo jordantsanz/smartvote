@@ -70,14 +70,18 @@ class AddressDisplay extends Component {
             <div className="main-page-holder">
               <h1 className="title" id="page-2-title">Is this you?</h1>
               <h2 className="subtitle" id="formatted-address">{this.breakAddress()}</h2>
-              <h2 className="subtitle" id="formatted-address">{this.breakAddressBack()}</h2>
+              <h2 className="subtitle" id="formatted-address2">{this.breakAddressBack()}</h2>
               <div className="button-holders">
                 <NavLink to="/addressinput">
-                  <button type="button" className="button" id="no-not-me">No, not me</button>
+                  <button type="button" className="button-white" id="no-not-me">Try again</button>
                 </NavLink>
                 <NavLink to="/loading">
-                  <button type="button" className="button" id="yes-thats-me" onClick={this.findElectionData}>Yes, that&apos;s me!</button>
+                  <button type="button" className="button-red" id="yes-thats-me" onClick={this.findElectionData}>Yes</button>
                 </NavLink>
+              </div>
+              <div className="paragraph" id="disclaimer">We&apos;ll use your address to find the right
+                elections and candidates. We won&apos;t store or share
+                any of your data!
               </div>
             </div>
           </div>

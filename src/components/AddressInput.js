@@ -18,11 +18,15 @@ class AddressInput extends Component {
     render() {
       return (
         <div className="page-wrapper" id="page-3">
-          <h1 className="title" id="page-3-title">Enter your address.</h1>
-          <input className="input" id="input-address" />
-          <NavLink to="/AddressDisplay">
-            <button type="button" className="button" id="continue" onClick={this.findLocation}>Continue</button>
-          </NavLink>
+          <div className="main-page-holder">
+            <h1 className="title" id="page-3-title">Enter your address.</h1>
+            <div className="input-button-wrapper">
+              <input className="input" type="text" id="input-address" />
+              <NavLink to="/AddressDisplay">
+                <button type="button" className="button" id="button-rounded" onClick={this.findLocation}>Continue</button>
+              </NavLink>
+            </div>
+          </div>
         </div>
       );
     }

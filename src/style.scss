@@ -53,8 +53,34 @@ width: 205px;
 height: 53px;
 }
 
+.button-white{
+  font-family: $mono;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+
+color: $red;
+
+background: $ghost;
+border: 2px solid $red;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+width: 184px;
+height: 53px;
+
+}
+button{
+  text-transform: uppercase;
+}
+
 button:hover{
   cursor: pointer;
+}
+
+input:focus, button:focus{
+  outline: none;
 }
 
 .title{
@@ -128,11 +154,137 @@ transition: 100ms ease all;
   font-size: 72px;
   line-height: 94px;
   text-align: center;
-  
+  margin-bottom: 0px;
   color: $lightblue;
 }
 
+#formatted-address, #formatted-address2{
+  font-family: $suez;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 47px;
+  text-align: center;
+  color: $black;
+}
+
 #formatted-address{
+  margin-bottom: 0px;
+  margin-top: 23px;
+}
+
+#formatted-address2{
+  margin-top: 0px;
+  margin-bottom: 37px;
+}
+
+#disclaimer{
+font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+color: $red;
+overflow-wrap: wrap;
+width: 536px;
+margin-top: 23px;
+}
+
+.button-holders{
+width: 500px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+}
+
+/************************************************** Address input page ***********************************/
+#page-3-title{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 94px;
+text-align: center;
+
+color: $lightblue;
+}
+
+#input-address{
+  background: $ghost;
+border: 2px solid $red;
+box-sizing: border-box;
+border-radius: 30px;
+position: absolute;
+width: 749px;
+height: 53px;
+top: 50vh;
+text-transform: uppercase;
+font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+
+color: #000000;
+}
+
+input[type="text"]{
+  padding-left: 43px;
+}
+
+
+.input-button-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#button-rounded{
+background: $red;
+border-radius: 0px 30px 30px 0px;
+font-family: DM Mono;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+position: absolute;
+width: 151px;
+height: 53px;
+left: 66.65vw;
+top: 50vh;
+border-color: transparent;
+
+color: #F4F4F9;
+}
+
+
+/******************************************** Loading elections page *******************************/
+#page-4-title{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 94px;
+text-align: center;
+margin: 0px;
+color: $lightblue;
+}
+
+#page-4-holder{
+  justify-content: center;
+  height: 65%;
+}
+
+
+/************************************************* Elections screen ***************************************/
+#page-5-title{
   font-family: $suez;
 font-style: normal;
 font-weight: normal;
@@ -140,5 +292,183 @@ font-size: 36px;
 line-height: 47px;
 text-align: center;
 
-color: $black;
+color: $lightblue;
+margin-bottom: 0px;
+}
+
+#tell-us-which{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+color: $red;
+width: 550px;
+margin-bottom: 27px;
+margin-top: 18px;
+}
+
+
+#select-all, #deselect-all{
+  width: 124px;
+height: 48px;
+font-family: $mono;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+}
+
+#page-5-button-holder{
+  width: 297px;
+}
+
+.checkbox-cards-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 101px;
+  margin-right: 101px;
+  margin-top: 40px;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.checkbox-card{
+width: 500px;
+min-height: 259px; 
+margin-left: 10px;
+margin-right: 10px;
+height: fit-content;
+
+background: $navy;
+/* Red Glow */
+border-radius: 10px;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.election-title{
+  
+font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 63px;
+text-align: center;
+margin-bottom: 0px;
+
+color: $ghost;
+}
+
+.candidate-name{
+font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #F4F4F9;
+}
+
+.candidates-list{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+
+.red-line{
+width: 279px;
+height: 0px;
+border-top: 3px solid #EF233C;
+margin-bottom: 15px;
+}
+
+.button-nav{
+  position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    top: 85vh;
+    text-decoration: none;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  
+border: 6px solid #F4F4F9;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 42.5px;
+  height: 39.5px;
+  border: 10px solid #EF233C;
+border-radius: 1px;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

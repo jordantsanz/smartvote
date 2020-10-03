@@ -10,7 +10,10 @@ class LoadingElection extends Component {
     if (this.props.electionData.length == 0 || this.props.electionData == undefined) {
       return (
         <div className="page-wrapper" id="page-4">
-          <h1 className="title" id="page-4-title"> Finding your election... </h1>
+          <div className="main-page-holder" id="page-4-holder">
+            <h1 className="title" id="page-4-title"> Finding your elections... </h1>
+            <button type="button" className="button-red">I love democracy!</button>
+          </div>
         </div>
       );
     } else {
