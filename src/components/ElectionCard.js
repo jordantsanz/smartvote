@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -60,12 +61,23 @@ class ElectionCard extends Component {
     }
   }
 
+  displayValues = () => {
+    let valuesString = this.props.election.values[0];
+    for (let valueIndex = 1; valueIndex < this.props.election.values.length; valueIndex++) {
+      valuesString = `${valuesString}, ${this.props.election.values[valueIndex]}`;
+    }
+    console.log(valuesString);
+    return (
+      <div className="valuesString">{valuesString}</div>
+    );
+  }
+
   render() {
     return (
       <div key={this.props.election.id} className="election-card-wrapper">
         <h1 className="election-card-race">{this.props.election.office} </h1>
-        <h2 className="election-card-recommendation">Recommendation: Fillername</h2>
-        <p className="election-card-values">Values</p>
+        <h2 className="election-card-recommendation">Recommendation: {this.props.election.recommendation}</h2>
+        <p className="election-card-values">Values: {this.displayValues()}</p>
         {this.isExpanded(this.props.election)}
       </div>
     );

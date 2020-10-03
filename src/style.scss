@@ -6,9 +6,31 @@ body, html {
 .page-wrapper{
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 #page-0{
   justify-content: space-around;
   align-items: center;
+}
+
+.fade-appear, .fade-enter{
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear-active, .fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+.fade-exit{
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
 }

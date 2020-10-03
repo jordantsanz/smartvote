@@ -29,13 +29,14 @@ export function queryElectionData(address) {
 }
 
 // calculates the nearest address of the user
-export function calculateAddress(latitude, longitude) {
+export function calculateAddress(latitude, longitude, history) {
   console.log(GOOGLE_KEY);
   return (dispatch) => {
     const url = `${GEOCODING_API_URL}${GOOGLE_KEY}&latlng=${latitude},${longitude}`;
     axios.get(`${url}`).then((response) => {
       console.log(response);
       dispatch({ type: ActionTypes.GET_ADDRESS, payload: response.data.results[0] });
+      history.push('/address');
     })
       .catch((error) => {
         return error;
