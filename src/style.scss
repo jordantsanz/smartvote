@@ -2,3 +2,13 @@ body, html {
     font-family: "Roboto", sans-serif;
     height: 100%;
   }
+
+.page-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+#page-0{
+  justify-content: space-around;
+  align-items: center;
+}

@@ -30,6 +30,7 @@ export function queryElectionData(address) {
 
 // calculates the nearest address of the user
 export function calculateAddress(latitude, longitude) {
+  console.log(GOOGLE_KEY);
   return (dispatch) => {
     const url = `${GEOCODING_API_URL}${GOOGLE_KEY}&latlng=${latitude},${longitude}`;
     axios.get(`${url}`).then((response) => {
