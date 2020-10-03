@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable eqeqeq */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
@@ -38,19 +39,46 @@ class AddressDisplay extends Component {
       console.log(electionData);
     };
 
+    breakAddress = () => {
+      let firstHalf = '';
+      for (let i = 0; i < this.props.location.address.length; i++) {
+        if (this.props.location.address[i] == ',') {
+          break;
+        } else {
+          firstHalf += this.props.location.address[i];
+        }
+      }
+      return <div className="subtitle">{firstHalf}</div>;
+    }
+
+    breakAddressBack = () => {
+      let comma;
+      for (let i = 0; i < this.props.location.address.length; i++) {
+        if (this.props.location.address[i] == ',') {
+          comma = i;
+          break;
+        }
+      }
+      const backhalf = this.props.location.address.slice(comma + 1);
+      return <div className="subtitle">{backhalf}</div>;
+    }
+
     render() {
       if (this.props.location != null || this.props.location != undefined || this.props.location != '') {
         return (
           <div className="page-wrapper" id="page-2">
-            <h1 className="title" id="page-2-title">Is this you?</h1>
-            <h2 className="subtitle" id="formatted-address">{this.props.location.address}</h2>
-            <div className="button-holders">
-              <NavLink to="/addressinput">
-                <button type="button" className="button" id="no-not-me">No, not me</button>
-              </NavLink>
-              <NavLink to="/loading">
-                <button type="button" className="button" id="yes-thats-me" onClick={this.findElectionData}>Yes, that&apos;s me!</button>
-              </NavLink>
+            <div className="main-page-holder">
+              <h1 className="title" id="page-2-title">Is this you?</h1>
+              <h2 className="subtitle" id="formatted-address">{this.breakAddress()}</h2>
+              <h2 className="subtitle" id="formatted-address">{this.breakAddressBack()}</h2>
+              <div className="button-holders">
+                <NavLink to="/addressinput">
+                  <button type="button" className="button" id="no-not-me">No, not me</button>
+                </NavLink>
+                <NavLink to="/loading">
+                  <button type="button" className="button" id="yes-thats-me" onClick={this.findElectionData}>Yes, that&apos;s me!</button>
+                </NavLink>
+              </div>
             </div>
           </div>
         );

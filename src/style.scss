@@ -1,5 +1,16 @@
+/************ COLORS *************/
+$red: #EF233C;
+$lightblue: #009BDE;
+$navy: #0E103D;
+$ghost: #F4F4F9;
+$black: #171717;
+$suez: 'Suez One', serif;
+$mono: 'DM Mono', monospace;
+
+
+
 body, html {
-    font-family: "Roboto", sans-serif;
+    font-family: $suez;
     height: 100%;
   }
 
@@ -10,6 +21,14 @@ body, html {
   left: 0;
   right: 0;
   top: 0;
+  height: 100%;
+}
+
+.main-page-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 #page-0{
@@ -17,6 +36,32 @@ body, html {
   align-items: center;
 }
 
+.button-red{
+background: $red;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+
+font-family: $mono;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+
+color: #F4F4F9;
+border-color: transparent;
+width: 205px;
+height: 53px;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.title{
+  font-family: $suez;
+}
+
+/************************************************ Routing transitions *****************************************/
 .fade-appear, .fade-enter{
   opacity: 0;
   z-index: 1;
@@ -33,4 +78,67 @@ body, html {
 .fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 150ms linear;
+}
+
+
+/************************************************** Home page ****************************************/
+#page-0-title{
+font-style: normal;
+font-weight: normal;
+font-size: 144px;
+line-height: 188px;
+text-align: center;
+color: $lightblue;
+margin-bottom: 0px;
+}
+
+/*************************************************** Address finder page ********************************/
+#page-1-title{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 94px;
+text-align: center;
+color: $lightblue;
+}
+
+.button-subtitle{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+color: $red;
+transition: 100ms ease all;
+}
+
+.button-subtitle:hover{
+  cursor: pointer;
+  font-size: 19px;
+}
+
+/**************************************************** AddressDisplayScreen ***************************************/
+#page-2-title{
+  font-family: $suez;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 94px;
+  text-align: center;
+  
+  color: $lightblue;
+}
+
+#formatted-address{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 47px;
+text-align: center;
+
+color: $black;
 }
