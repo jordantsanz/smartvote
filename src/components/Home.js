@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { queryElectionData, calculateAddress } from '../actions';
+import Sliders from './Sliders';
 
 class Home extends Component {
   constructor(props) {
