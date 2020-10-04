@@ -34,8 +34,11 @@ But first, our team is going to get a **good night's sleep** tonight.
 
 ## The Team
 Wylie Kasai - UI Design and 3D Models 🎨
+
 Sathvika Korandla - Developer 💻
-Catherine Parnell - Developer
+
+Catherine Parnell - Developer 💻
+
 Jordan Sanz - Developer 💻
 
 The entire team is a proud group of 22s from Dartmouth College. GBG 🌲
