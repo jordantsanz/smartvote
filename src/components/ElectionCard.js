@@ -105,6 +105,7 @@ class ElectionCard extends Component {
   }
 
   render() {
+    const customStyles = { overlay: { zIndex: 1000 } };
     return (
       <div key={this.props.election.id} className="checkbox-card">
         <h1 className="election-title">{this.props.election.office} </h1>
@@ -113,6 +114,7 @@ class ElectionCard extends Component {
         <button className="button-transparent" onClick={this.handleOpenModal} type="button">See why</button>
         <div className="modal-flex">
           <ReactModal
+            style={customStyles}
             isOpen={this.state.showModal}
             contentLabel="ResultModal"
             className="modal"
