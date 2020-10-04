@@ -48,12 +48,11 @@ export function calculateAddress(latitude, longitude, history) {
 }
 
 export function calculatePersonalityWithText(elections, userText) {
-  console.log(elections);
-  console.log(userText);
   return (dispatch) => {
     axios.put(`${BACKEND_API_URL}/text-recommendations`, { elections, userText }).then((response) => {
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
       console.log(response.data);
+      console.log('OHOASHDFOASDHF');
     })
       .catch((error) => {
         return error;
@@ -63,7 +62,7 @@ export function calculatePersonalityWithText(elections, userText) {
 
 export function calculatePersonalityWithSliders(elections, user) {
   return (dispatch) => {
-    axios.put(`${BACKEND_API_URL}/sliders-recommendations`, { elections, user }).then((response) => {
+    axios.put(`${BACKEND_API_URL}/slide-recommendations`, { elections, user }).then((response) => {
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
     })
       .catch((error) => {

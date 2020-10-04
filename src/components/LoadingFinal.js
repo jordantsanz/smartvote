@@ -14,6 +14,7 @@ class LoadingFinal extends Component {
         </div>
       );
     } else {
+      setTimeout(5000);
       return (
         <Redirect to="/results" />
       );

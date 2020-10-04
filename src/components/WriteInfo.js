@@ -18,9 +18,6 @@ saveAnswer = (event) => {
 }
 
   submitAnswer = () => {
-    console.log(this.state.writtenAnswer); // should actually submit this somewhere
-    console.log(this.state.writtenAnswer);
-    console.log(this.props.electionData);
     this.props.calculatePersonalityWithText(this.props.electionData, this.state.writtenAnswer);
   }
 

@@ -751,6 +751,7 @@ input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
   width: 341px;
+  background-color: transparent;
 }
 input[type=range]:focus {
   outline: none;
@@ -845,4 +846,128 @@ text-align: center;
 /* LIGHT BLUE */
 
 color: #009BDE;
+}
+
+
+/*************************************************** Sliders page ************************************/
+#page-sliders-title{
+  
+font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 47px;
+text-align: center;
+
+color: #009BDE;
+}
+
+#sliders-main-description{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+color: #EF233C;
+width: 600px;
+}
+
+.section-title{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 63px;
+/* identical to box height */
+
+text-align: center;
+
+/* LIGHT BLUE */
+
+color: #009BDE;
+margin-bottom: 0px;
+}
+
+.slider-section{
+  
+width: 1000px;
+
+background: #0E103D;
+border-radius: 10px;
+margin-bottom: 36px;
+padding-bottom: 20px;
+}
+
+.single-slider{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-flex{
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-slider-title{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+text-transform: uppercase;
+/* GHOST */
+
+color: #F4F4F9;
+margin: 0px;
+margin-top: 26px;
+}
+
+
+.single-slider-paragraph{
+  font-family: $mono;
+font-style: normal;
+width: 300px;
+font-weight: normal;
+font-size: 12px;
+line-height: 15.62px;
+text-align: center;
+margin: 0px;
+
+/* GHOST */
+
+color: #F4F4F9;
+margin-bottom: 17px;
+}
+
+.label-on-slider{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+margin-left: 10px;
+margin-right: 10px;
+text-transform: uppercase;
+width: 100px;
+overflow: wrap;
+/* GHOST */
+
+color: #F4F4F9;
+}
+#submit-sliders{
+  width: 151px;
+height: 53px;
+margin-bottom: 40px;
+}
+
+#sliders-main-page{
+  height: fit-content;
 }
