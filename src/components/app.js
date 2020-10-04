@@ -12,6 +12,7 @@ import AboutUser from './AboutUser';
 import WriteInfo from './WriteInfo';
 import LoadingFinal from './LoadingFinal';
 import FinalResults from './FinalResults';
+import Sliders from './Sliders';
 
 const App = (props) => {
   return (
@@ -32,6 +33,7 @@ const App = (props) => {
               <Route path="/elections" component={ElectionsScreen} />
               <Route path="/aboutyou" component={AboutUser} />
               <Route path="/write" component={WriteInfo} />
+              <Route path="/sliders" component={Sliders} />
               <Route path="/loadingfinal" component={LoadingFinal} />
               <Route path="/results" component={FinalResults} />
             </Switch>

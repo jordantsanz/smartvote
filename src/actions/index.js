@@ -4,12 +4,13 @@ export const ActionTypes = {
   GET_ELECTION_DATA: 'GET_ELECTION_DATA',
   GET_ADDRESS: 'GET_ADDRESS',
   GET_RECOMMENDATION: 'GET_RECOMMENDATION',
+  SAVE_ELECTION_DATA: 'SAVE_ELECTION_DATA',
 };
 
 const CIVIC_API_URL = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
 const GEOCODING_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json?key=';
 const GOOGLE_KEY = 'AIzaSyC-hLGCLH9_wYA5ZyLKNrG-57VT6rRkb5A';
-const BACKEND_API_URL = 'https://localhost:4000/functions/api';
+const BACKEND_API_URL = 'http://localhost:8081/api';
 
 // returns all elections that user can participate in
 export function queryElectionData(address) {
@@ -46,13 +47,33 @@ export function calculateAddress(latitude, longitude, history) {
   };
 }
 
-export function calculatePersonalityWithText(userText) {
+export function calculatePersonalityWithText(elections, userText) {
   return (dispatch) => {
-    axios.put(`${BACKEND_API_URL}/recommendations`, userText).then((response) => {
+    axios.put(`${BACKEND_API_URL}/text-recommendations`, { elections, userText }).then((response) => {
+      dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
+      console.log(response.data);
+      console.log('OHOASHDFOASDHF');
+    })
+      .catch((error) => {
+        return error;
+      });
+  };
+}
+
+export function calculatePersonalityWithSliders(elections, user) {
+  return (dispatch) => {
+    axios.put(`${BACKEND_API_URL}/slide-recommendations`, { elections, user }).then((response) => {
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
     })
       .catch((error) => {
         return error;
       });
+  };
+}
+
+export function saveCheckedElections(elections) {
+  console.log(elections);
+  return (dispatch) => {
+    dispatch({ type: ActionTypes.SAVE_ELECTION_DATA, payload: elections });
   };
 }
