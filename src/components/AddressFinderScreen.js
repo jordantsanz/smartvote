@@ -6,6 +6,7 @@ class AddressFinderScreen extends Component {
     findLocation = () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(((position) => {
+          console.log(position.coords.latitude, position.coords.longitude);
           this.props.calculateAddress(position.coords.latitude, position.coords.longitude, this.props.history);
         }));
       } else {

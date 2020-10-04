@@ -24,12 +24,18 @@ class FinalResults extends Component {
 
     render() {
       return (
-        <div className="page-wrapper" id="page-7">
-          <h1 className="title" id="recommendations">Your recommendations are ready!</h1>
-          {this.finalResults()}
-          <NavLink to="/">
-            <button className="button" type="button">Start over</button>
-          </NavLink>
+        <div className="page-wrapper" id="page-8">
+          <div className="main-page-holder">
+            <div className="page-starter">
+              <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
+            </div>
+            <div className="page-recommendations">
+              {this.finalResults()}
+              <NavLink to="/">
+                <button className="button" type="button">Start over</button>
+              </NavLink>
+            </div>
+          </div>
         </div>
       );
     }

@@ -413,6 +413,10 @@ margin-bottom: 15px;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  margin-top: 40px;
 }
 
 /* Hide the browser's default checkbox */
@@ -461,14 +465,128 @@ border-radius: 10px;
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 42.5px;
-  height: 39.5px;
+  left: 17px;
+  top: -28px;
+  width: 10px;
+  height: 40px;
   border: 10px solid #EF233C;
-border-radius: 1px;
-  border-width: 0 3px 3px 0;
+  border-radius: 1px;
+  border-width: 0 10px 10px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+/************************************************** AboutUser *************************************/
+#page-6-title{
+  font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 94px;
+text-align: center;
+
+color: #009BDE;
+margin-bottom: 0px;
+}
+
+#subtitle-text{
+  font-family: $mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  
+  color: #EF233C;
+  width: 550px;
+}
+
+.button-wrappers{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#connect-to-facebook, #connect-to-twitter, #values-button, #write-a-response{
+  margin-top: 24px;
+  width: 281px;
+height: 53px;
+}
+
+
+
+/*********************************************** write info **************************************/
+#page-7-title{
+  
+font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 47px;
+text-align: center;
+
+color: #009BDE;
+margin-bottom: 0px;
+}
+
+#questions{
+  font-family:  $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+color: #EF233C;
+width: 550px;
+}
+
+textarea{
+width: 800px;
+height: 400px;
+resize: none;
+
+/* GHOST */
+
+background: #F4F4F9;
+/* NAVY */
+
+border: 4px solid #0E103D;
+box-sizing: border-box;
+/* Button Shadow */
+
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+margin-bottom: 40px;
+padding-left: 20px;
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+
+/* NAVY */
+
+color: #0E103D;
+}
+
+/***************************************************************** Final Results ***************************/
+#page-8-title{
+  
+font-family: $suez;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 94px;
+text-align: center;
+
+color: #009BDE;
+margin-bottom: 0px;
+width: 900px;
+}
+
