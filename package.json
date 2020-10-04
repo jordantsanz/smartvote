@@ -10,7 +10,7 @@
     "test": "eslint src",
     "build": "yarn clean; NODE_ENV=production webpack --colors; cp -f _redirects dist/",
     "clean": "rimraf dist",
-    "deploy": "yarn build; surge -p dist -d ivyhacks.surge.sh; yarn clean"
+    "deploy": "yarn build; surge -p dist -d smartvote.surge.sh; yarn clean"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -69,6 +69,7 @@
     "react-video-scroll": "^1.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "surge": "^0.21.6",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }

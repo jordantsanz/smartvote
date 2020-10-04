@@ -44,6 +44,7 @@ video {
   flex-direction: column;
   align-items: center;
   height: max-content;
+  min-height: 100vh;
   display: flex;
   text-align: center;
   background-image: url("images/vectors_bg_regular.png");
@@ -850,7 +851,7 @@ color: #009BDE;
   width: 121px;
   height: 40px;
   position: absolute;
-  top: 85vh;
+  top: -260vh;
   animation-name: bounce;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -875,7 +876,6 @@ color: #009BDE;
 		        transform: translateY(-12px);
 	}
 }
-
 
 .ReactModal__Overlay--after-open{
   opacity: 1;

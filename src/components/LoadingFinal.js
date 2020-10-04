@@ -56,6 +56,19 @@ const results = {
 };
 
 class LoadingFinal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      render: false, // Set render state to false
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => { // Start the timer
+      this.setState({ render: true }); // After 1 second, set render to true
+    }, 4000);
+  }
+
   findMaxes = () => {
     const elections = this.props.results;
     const electionsNew = [];
@@ -78,24 +91,35 @@ class LoadingFinal extends Component {
   }
 
   render() {
-    if (this.props.results.length == 0 || this.props.results == undefined) {
+    if (!this.state.render) {
       return (
         <div className="page-wrapper" id="page-4">
-          <video width="320" height="240" loop autoPlay muted id="video">
-            <source src={video} type="video/mp4" />
-          </video>
-          <h1 className="title" id="page-4-title"> Finding your election... </h1>
+
+          <div className="special-main-page-holder" id="page-4-holder">
+            <video className="videoWhite" width="320" height="240" loop autoPlay muted id="video">
+              <source src={video} className="videoWhite" type="video/mp4" />
+            </video>
+            <h1 className="title" id="page-4-title"> Generating recommendations... </h1>
+            <button type="button" id="democracy" className="button-red">I love democracy!</button>
+          </div>
         </div>
       );
-    } else if (this.props.newResults.length == 0 || this.props.newResults == undefined) {
+    } else if (this.props.newResults.length != 0 || this.props.newResults != undefined) {
       return (
-        <div className="page-wrapper" id="page-4">
-          <h1 className="title" id="page-4-title"> Finding your election... </h1>
-        </div>
+        <Redirect to="/results" />
       );
     } else {
       return (
-        <Redirect to="/results" />
+        <div className="page-wrapper" id="page-4">
+
+          <div className="special-main-page-holder" id="page-4-holder">
+            <video className="videoWhite" width="320" height="240" loop autoPlay muted id="video">
+              <source src={video} className="videoWhite" type="video/mp4" />
+            </video>
+            <h1 className="title" id="page-4-title"> Generating recommendations... </h1>
+            <button type="button" id="democracy" className="button-red">I love democracy!</button>
+          </div>
+        </div>
       );
     }
   }

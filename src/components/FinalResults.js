@@ -26,7 +26,7 @@ const results = {
             values_score: 8,
             average_score: 98,
           },
-          name: 'Sathvi',
+          name: 'John Cornyn',
         },
         {
           profile: {
@@ -34,7 +34,7 @@ const results = {
             values_score: 20,
             average_score: 2,
           },
-          name: 'Catherine',
+          name: 'David M. Alameel',
         },
       ],
       office: 'US Senate',
@@ -48,7 +48,7 @@ const results = {
             values_score: 80,
             average_score: 98,
           },
-          name: 'John Cornyn',
+          name: 'Dan Patrick',
         },
         {
           profile: {
@@ -56,10 +56,10 @@ const results = {
             values_score: 20,
             average_score: 2,
           },
-          name: 'MJ Hegar',
+          name: 'Leticia Van de Putte',
         },
       ],
-      office: 'Railroad Convention',
+      office: 'Lieutenant Governor',
     },
   ],
 };
