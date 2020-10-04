@@ -4,7 +4,8 @@ const initialState = {
   results: {},
 };
 
-const electionDataReducer = (state = initialState, action) => {
+const resultsReducer = (state = initialState, action) => {
+  console.log(action.payload);
   switch (action.type) {
     case ActionTypes.GET_RECOMMENDATION:
       return {
@@ -17,4 +18,4 @@ const electionDataReducer = (state = initialState, action) => {
   }
 };
 
-export default electionDataReducer;
+export default resultsReducer;

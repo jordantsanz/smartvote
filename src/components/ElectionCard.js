@@ -63,6 +63,7 @@ class ElectionCard extends Component {
             contentLabel="Minimal Modal Example"
             className="modal"
             overlayClassName="overlay"
+            ariaHideApp={false}
           >
             <div className="modal-main">
               <div className="modal-upper-row">

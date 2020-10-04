@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { calculatePersonalityWithText } from '../actions';
 
 class WriteInfo extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ saveAnswer = (event) => {
 
   submitAnswer = () => {
     console.log(this.state.writtenAnswer); // should actually submit this somewhere
+    this.props.calculatePersonalityWithText(this.props.electionData, this.state.writtenAnswer);
   }
 
   render() {
@@ -37,4 +40,11 @@ saveAnswer = (event) => {
   }
 }
 
-export default WriteInfo;
+function mapStateToProps(reduxState) {
+  return {
+    // address: reduxState.address,
+    electionData: reduxState.electionData.contests,
+    location: reduxState.location,
+  };
+}
+export default connect(mapStateToProps, calculatePersonalityWithText)(WriteInfo);
