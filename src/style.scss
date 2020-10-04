@@ -54,11 +54,11 @@ video {
   background-position: center;
 }
 
-.main-page-holder{
+#page-6-wrapper, #page-1-wrapper, #page-3-wrapper, #page-2-wrapper, #page-4-holder{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: max-content;
+  height: 100%;
   display: flex;
   text-align: center;
   background-image: url("images/vectors_bg_regular.png");
@@ -378,9 +378,7 @@ color: $lightblue;
 
 #page-4-holder{
   justify-content: center;
-  height: 65%;
 }
-
 
 /************************************************* Elections screen ***************************************/
 #page-5-title{

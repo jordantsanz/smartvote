@@ -71,7 +71,7 @@ unloadGoogleMaps = () => {
       if (this.state.googleMapsReady) {
         return (
           <div className="page-wrapper" id="page-3">
-            <div className="main-page-holder">
+            <div className="main-page-holder" id="page-3-wrapper">
               <h1 className="title" id="page-3-title">Enter your address.</h1>
               <div className="input-button-wrapper">
                 <PlacesAutocomplete

@@ -85,7 +85,7 @@ class AddressDisplay extends Component {
       if (this.props.location != null || this.props.location != undefined || this.props.location != '') {
         return (
           <div className="page-wrapper" id="page-2">
-            <div className="main-page-holder">
+            <div className="main-page-holder" id="page-2-wrapper">
               <h1 className="title" id="page-2-title">Is this you?</h1>
               <h2 className="subtitle" id="formatted-address">{this.breakAddress()}</h2>
               <h2 className="subtitle" id="formatted-address2">{this.breakAddressBack()}</h2>
