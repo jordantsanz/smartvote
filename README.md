@@ -1,7 +1,7 @@
 # IvyHacks
 
 ## Check it out
-Our project is deployed at (https://smartvote.surge.sh/)[https://smartvote.surge.sh/].
+Our project is deployed at https://smartvote.surge.sh/.
 
 ## Inspiration
 Our project was inspired by the experience of heading to the polls, excited to vote for your favorite headlining candidates but lacking any point of reference when it comes to the lesser-known local elections candidates. SmartVote hopes to help bridge this gap of knowledge through recommendations to our users based on the needs and values of the voter and the candidates - giving you the power to create your own voting guide.
