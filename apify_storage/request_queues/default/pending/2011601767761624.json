@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/emergency-call-metadata-control-data/emergency-call-metadata-control-data.xhtml#emergency-call-action-failure-reason",
+    "uniqueKey": "https://www.iana.org/assignments/emergency-call-metadata-control-data/emergency-call-metadata-control-data.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "H81E1au8GWWtmsZ"
+}

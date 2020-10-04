@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/ospf-authentication-codes/ospf-authentication-codes.xhtml#authentication-codes",
+    "uniqueKey": "https://www.iana.org/assignments/ospf-authentication-codes/ospf-authentication-codes.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "NCDS2Q1aCH2CTi1"
+}

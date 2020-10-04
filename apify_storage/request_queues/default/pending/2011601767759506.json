@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/glossary",
+    "uniqueKey": "https://www.iana.org/glossary",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "PLn4ZLIIpvIfu36"
+}

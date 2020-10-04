@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/reports/c.2.9.2.d/20160121-health",
+    "uniqueKey": "https://www.iana.org/reports/c.2.9.2.d/20160121-health",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "UTP2xpgtLJ8lAZm"
+}

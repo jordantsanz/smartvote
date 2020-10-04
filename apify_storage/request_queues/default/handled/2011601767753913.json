@@ -1,0 +1,13 @@
+{
+    "id": "9ZTvcmdpInRoDKe",
+    "url": "https://www.iana.org/dnssec/files",
+    "loadedUrl": "https://www.iana.org/dnssec/files",
+    "uniqueKey": "https://www.iana.org/dnssec/files",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "handledAt": "2020-10-03T23:29:26.139Z"
+}

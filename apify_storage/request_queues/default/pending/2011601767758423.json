@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/form/ports-services",
+    "uniqueKey": "https://www.iana.org/form/ports-services",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "B5n0FXfkc7qTFs9"
+}

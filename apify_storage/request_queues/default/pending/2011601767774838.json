@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/dnssec/dps/zsk-operator/dps-zsk-operator-v2.0.pdf",
+    "uniqueKey": "https://www.iana.org/dnssec/dps/zsk-operator/dps-zsk-operator-v2.0.pdf",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "QOgOuM7uNyGJCjA"
+}

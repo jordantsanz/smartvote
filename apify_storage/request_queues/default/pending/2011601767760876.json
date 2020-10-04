@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/cwt/cwt.xhtml#claims-registry",
+    "uniqueKey": "https://www.iana.org/assignments/cwt/cwt.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "04lwVdZ0UV0vIox"
+}

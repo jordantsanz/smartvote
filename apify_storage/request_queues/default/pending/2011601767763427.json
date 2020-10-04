@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/reports/c.2.9.2.d/20160126-weatherchannel",
+    "uniqueKey": "https://www.iana.org/reports/c.2.9.2.d/20160126-weatherchannel",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "S6SGMBQXGa1K9ek"
+}

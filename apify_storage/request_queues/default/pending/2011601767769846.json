@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/webpush-parameters/webpush-parameters.xhtml#vapid-authentication-scheme-parameters",
+    "uniqueKey": "https://www.iana.org/assignments/webpush-parameters/webpush-parameters.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "mQbiWINiP2idHMZ"
+}

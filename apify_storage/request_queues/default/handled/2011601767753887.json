@@ -1,0 +1,13 @@
+{
+    "id": "k3oq4Y9eitxYmhn",
+    "url": "https://www.iana.org/dnssec",
+    "loadedUrl": "https://www.iana.org/dnssec",
+    "uniqueKey": "https://www.iana.org/dnssec",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "handledAt": "2020-10-03T23:29:21.924Z"
+}

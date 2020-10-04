@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/cgi-bin/assignments.pl",
+    "uniqueKey": "https://www.iana.org/cgi-bin/assignments.pl",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "LnX5hcYBV3Bpu71"
+}
