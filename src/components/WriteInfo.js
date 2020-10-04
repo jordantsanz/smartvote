@@ -38,7 +38,7 @@ saveAnswer = (event) => {
   render() {
     return (
       <div className="page-wrapper" id="page-7">
-        <div className="main-page-holder">
+        <div className="main-page-holder" id="page-7-wrapper">
           <h1 className="title" id="page-7-title">Tell us about yourself!</h1>
           <h2 className="subtitle" id="questions">Please write 100-150 words about yourself in the box below. Try to answer questions like “What do you care about?” or
             “What is most important to you in life?”

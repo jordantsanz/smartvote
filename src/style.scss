@@ -54,7 +54,7 @@ video {
   background-position: center;
 }
 
-#page-6-wrapper, #page-1-wrapper, #page-3-wrapper, #page-2-wrapper, #page-4-holder{
+#page-6-wrapper, #page-1-wrapper, #page-3-wrapper, #page-2-wrapper, #page-4-holder, #page-7-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,6 +67,20 @@ video {
   background-attachment: fixed;
   position: relative;
   background-position: center;
+}
+#page-10-wrapper{
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 102%;
+display: flex;
+text-align: center;
+background-image: url("images/vectors_bg_regular.png");
+background-size: cover;
+width: auto;
+background-attachment: fixed;
+position: relative;
+background-position: center;
 }
 
 
@@ -372,7 +386,6 @@ font-size: 72px;
 line-height: 94px;
 text-align: center;
 margin: 0px;
-margin-top: 36vh;
 color: $lightblue;
 }
 
@@ -810,6 +823,7 @@ color: #009BDE;
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 200ms ease;
+  z-index: 2;
 }
 
 .red-arrow{
@@ -846,10 +860,12 @@ color: #009BDE;
 
 .ReactModal__Overlay--after-open{
   opacity: 1;
+  z-index: 2;
 }
 
 .ReactModal__Overlay--before-close{
   opacity: 0;
+  z-index: 2;
 }
 
 #final-description{
@@ -885,6 +901,7 @@ box-shadow: 4px 4px 20px rgba(255, 255, 255, 0.25);
 border-radius: 10px;
 position: absolute;
 margin-top: 5vh;
+z-index: 1;
 }
 .overlay{
 width: 1440px;

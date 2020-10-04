@@ -117,7 +117,7 @@ class FinalResults extends Component {
             </div>
           </div>
           <div className="page-recommendations">
-            <div className="main-page-holder">
+            <div className="main-page-holder" id="page-10-wrapper">
               <h1 id="page-9-title">Here are your recommendations!</h1>
               <p className="subtitle" id="final-description">We generated the following recommendations based on matches with your personality profile.
                 Click any of the recommendations to see more!
