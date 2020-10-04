@@ -24,8 +24,8 @@ class FinalResults extends Component {
   }
 
     finalResults = () => {
-      console.log(this.props.elections);
-      return this.props.elections.map((election) => {
+      console.log(this.props.elections.results.elections);
+      return this.props.elections.results.elections.map((election) => {
         console.log(election);
         return (
           <ElectionCard election={election} />
