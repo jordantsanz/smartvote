@@ -54,7 +54,25 @@ video {
   background-position: center;
 }
 
-#page-6-wrapper, #page-1-wrapper, #page-3-wrapper, #page-2-wrapper, #page-4-holder, #page-7-wrapper{
+.special-main-page-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+  display: flex;
+  text-align: center;
+  background-size: cover;
+  width: auto;
+  background-attachment: fixed;
+  position: relative;
+  background-position: center;
+}
+
+.videoWhite{
+  opacity: .75;
+}
+
+#page-6-wrapper, #page-1-wrapper, #page-3-wrapper, #page-2-wrapper, #page-7-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -386,7 +404,8 @@ font-size: 72px;
 line-height: 94px;
 text-align: center;
 margin: 0px;
-color: $lightblue;
+color: $navy;
+margin-top: 30vh;
 }
 
 #page-4-holder{
