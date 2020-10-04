@@ -3,24 +3,66 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ElectionCard from './ElectionCard';
 
+const results = {
+  elections: [
+    {
+      candidates: [
+        {
+          profile: {
+            needs_score: 50,
+            values_score: 8,
+            average_score: 98,
+          },
+          name: 'Sathvi',
+        },
+        {
+          profile: {
+            needs_score: 98,
+            values_score: 20,
+            average_score: 2,
+          },
+          name: 'Catherine',
+        },
+      ],
+      office: 'US Senate',
+    },
+
+    {
+      candidates: [
+        {
+          profile: {
+            needs_score: 50,
+            values_score: 80,
+            average_score: 98,
+          },
+          name: 'John Cornyn',
+        },
+        {
+          profile: {
+            needs_score: 98,
+            values_score: 20,
+            average_score: 2,
+          },
+          name: 'MJ Hegar',
+        },
+      ],
+      office: 'Railroad Convention',
+    },
+  ],
+};
+
 class FinalResults extends Component {
     finalResults = () => {
-      const candidate = {
-        name: 'Wylie',
-        party: 'Republican',
-      };
-      const result = {
-        office: 'President of Nothing',
-        recommendation: 'Wylie',
-        candidates: [candidate],
-        values: ['being a bad bitch', 'tiktok'],
-      };
-      const personalityData = [result]; // this will be props of personalityData passed through redux
-      return personalityData.map((election) => {
+      return results.elections.map((election) => {
+        console.log(election);
         return (
           <ElectionCard election={election} />
         );
       });
+    }
+
+    printIt = () => {
+      window.print();
     }
 
     render() {
@@ -38,14 +80,18 @@ class FinalResults extends Component {
               <p className="subtitle" id="final-description">We generated the following recommendations based on matches with your personality profile.
                 Click any of the recommendations to see more!
               </p>
-              <div className="button-holder">
-                <button type="button" id="print" className="button-white">Print results</button>
-                <button type="button" className="button-red">Email my results</button>
+
+              <div className="final-cards-holder">
+                {this.finalResults()}
               </div>
-              {this.finalResults()}
-              <NavLink to="/">
-                <button className="button-red" id="submit-sliders" type="button">Start over</button>
-              </NavLink>
+              <div className="button-holder">
+                <button type="button" id="print" className="button-white" onClick={this.printIt}>Print results</button>
+                {/* <button type="button" className="button-red">Email my results</button> */}
+                <NavLink to="/">
+                  <button className="button-red" id="print" type="button">Start over</button>
+                </NavLink>
+              </div>
+
             </div>
           </div>
         </div>

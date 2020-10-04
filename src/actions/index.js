@@ -3,8 +3,10 @@ import axios from 'axios';
 export const ActionTypes = {
   GET_ELECTION_DATA: 'GET_ELECTION_DATA',
   GET_ADDRESS: 'GET_ADDRESS',
+  SET_ADDRESS: 'SET_ADDRESS',
   GET_RECOMMENDATION: 'GET_RECOMMENDATION',
   SAVE_ELECTION_DATA: 'SAVE_ELECTION_DATA',
+  SET_RECOMMENDATIONS: 'SET_RECOMMENDATIONS',
 };
 
 const CIVIC_API_URL = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
@@ -33,7 +35,6 @@ export function queryElectionData(address) {
 
 // calculates the nearest address of the user
 export function calculateAddress(latitude, longitude, history) {
-  console.log(GOOGLE_KEY);
   return (dispatch) => {
     const url = `${GEOCODING_API_URL}${GOOGLE_KEY}&latlng=${latitude},${longitude}`;
     axios.get(`${url}`).then((response) => {
@@ -44,6 +45,13 @@ export function calculateAddress(latitude, longitude, history) {
       .catch((error) => {
         return error;
       });
+  };
+}
+
+export function setAddress(address) {
+  return (dispatch) => {
+    console.log(address);
+    dispatch({ type: ActionTypes.SET_ADDRESS, payload: address });
   };
 }
 
@@ -75,5 +83,11 @@ export function saveCheckedElections(elections) {
   console.log(elections);
   return (dispatch) => {
     dispatch({ type: ActionTypes.SAVE_ELECTION_DATA, payload: elections });
+  };
+}
+
+export function setRecommendations(resultsNew) {
+  return (dispatch) => {
+    dispatch({ type: ActionTypes.SET_RECOMMENDATIONS, payload: resultsNew });
   };
 }

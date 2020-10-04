@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { queryElectionData, calculateAddress, saveCheckedElections } from '../actions';
+import { saveCheckedElections } from '../actions';
 
 class ElectionsScreen extends Component {
   constructor(props) {
@@ -118,4 +118,4 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, { queryElectionData, calculateAddress, saveCheckedElections })(ElectionsScreen);
+export default connect(mapStateToProps, { saveCheckedElections })(ElectionsScreen);

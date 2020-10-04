@@ -248,7 +248,7 @@ border-radius: 30px;
 position: absolute;
 width: 749px;
 height: 53px;
-top: 50vh;
+top: 55vh;
 text-transform: uppercase;
 font-family: $mono;
 font-style: normal;
@@ -284,13 +284,45 @@ line-height: 23px;
 position: absolute;
 width: 151px;
 height: 53px;
-left: 66.65vw;
-top: 50vh;
+left: 67.65vw;
+top: 55vh;
 border-color: transparent;
 
 color: #F4F4F9;
 }
 
+.input-autocomplete-wrapper{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.autocomplete-dropdown-container{
+  width: 749px;
+    position: absolute;
+    top: 70vh;
+    background: #F4F4F9;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.suggestion-item, .suggestion-item-active{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+margin-top: 2px;
+margin-bottom: 2px;
+color: $navy;
+}
+
+.suggestion-item-active{
+  border: 1px solid #EF233C;
+  border-radius: 10px;
+  transition: 100ms ease all;
+}
 
 /******************************************** Loading elections page *******************************/
 #page-4-title{
@@ -449,6 +481,7 @@ a{
   align-items: center;
   padding-top: 50px;
   margin-top: 40px;
+  transition: 200ms ease all;
 }
 
 /* Hide the browser's default checkbox */
@@ -478,26 +511,24 @@ border-radius: 10px;
 .checkmark:after {
   content: "";
   position: absolute;
-  display: none;
+  opacity: 0;
+  background-image: url('images/Red\ Checkmark.svg');
+  transition: 150ms ease all;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
   display: block;
+  transition: 150ms ease all;
+  opacity: 1;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 17px;
   top: -28px;
-  width: 10px;
-  height: 40px;
-  border: 10px solid #EF233C;
-  border-radius: 1px;
-  border-width: 0 10px 10px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  width: 52px;
+  height: 49.5px;
+  background-image: url('images/Red\ Checkmark.svg');
 }
 
 /************************************************** AboutUser *************************************/
@@ -696,10 +727,6 @@ margin-bottom: 16px;
   margin-bottom: 32px;
 }
 
-#print{
-  margin-right: 32px;
-}
-
 .modal{
   width: 34.7vw;
   margin-left: 32.6vw;
@@ -888,6 +915,37 @@ color: #F4F4F9;
 outline: none;
 }
 
+.final-cards-holder{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media print {
+  @page {
+    size: landscape;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .final-cards-holder, .final-cards-holder * {
+    visibility: visible;
+  }
+  .final-cards-holder {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+#print{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 175px;
+height: 48px;
+}
 
 /*************************************************** Sliders page ************************************/
 #page-sliders-title{

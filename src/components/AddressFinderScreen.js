@@ -21,7 +21,7 @@ class AddressFinderScreen extends Component {
           <div className="main-page-holder">
             <h1 className="title" id="page-1-title">Let&apos;s check out your elections.</h1>
             <button onClick={this.findLocation} className="button-red" type="button" id="find-your-address-button">Find my district</button>
-            <NavLink to="/addressinput" class="link">
+            <NavLink to="/addressinput" className="link">
               <h2 className="button-subtitle">Or enter in your address manually</h2>
             </NavLink>
           </div>

@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import { queryElectionData } from '../actions';
 
 class LoadingElection extends Component {
   render() {
@@ -31,4 +30,4 @@ function mapStateToProps(reduxState) {
     location: reduxState.location,
   };
 }
-export default connect(mapStateToProps, queryElectionData)(LoadingElection);
+export default connect(mapStateToProps, null)(LoadingElection);

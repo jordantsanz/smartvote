@@ -4,39 +4,57 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
-import { calculateAddress, queryElectionData } from '../actions';
+import { queryElectionData } from '../actions';
 
 class AddressDisplay extends Component {
     findElectionData = () => {
-      const addressList = this.props.location.address_components;
-      let component,
-        streetnum,
-        streetname,
-        city,
-        state,
-        niceAddress;
-      for (component of addressList) {
-        switch (component.types[0]) {
-          case 'street_number':
-            streetnum = component.short_name;
-            break;
-          case 'route':
-            streetname = `${component.short_name}.`;
-            break;
-          case 'locality':
-            city = component.short_name;
-            break;
-          case 'administrative_area_level_1':
-            state = component.short_name;
-            break;
-          default:
-            break;
+      if (!this.props.location.finished) {
+        const addressList = this.props.location.address_components;
+        let component,
+          streetnum,
+          streetname,
+          city,
+          state,
+          niceAddress;
+        for (component of addressList) {
+          switch (component.types[0]) {
+            case 'street_number':
+              streetnum = component.short_name;
+              break;
+            case 'route':
+              streetname = `${component.short_name}.`;
+              break;
+            case 'locality':
+              city = component.short_name;
+              break;
+            case 'administrative_area_level_1':
+              state = component.short_name;
+              break;
+            default:
+              break;
+          }
+          if (streetnum != undefined) {
+            niceAddress = `${streetnum} ${streetname} ${city} ${state}`;
+          } else if (streetname != undefined) {
+            niceAddress = `${streetname} ${city} ${state}`;
+          } else {
+            niceAddress = `${city} ${state}`;
+          }
         }
-        niceAddress = `${streetnum} ${streetname} ${city} ${state}`;
-      }
 
-      const electionData = this.props.queryElectionData(niceAddress);
-      console.log(electionData);
+        console.log(niceAddress);
+        this.props.queryElectionData(niceAddress);
+      } else {
+        let niceAddress = '';
+        for (const termObj of this.props.location.address_components) {
+          if (termObj.vaulue != 'USA') {
+            console.log(termObj.value);
+            niceAddress = `${niceAddress} ${termObj.value}`;
+          }
+        }
+        console.log(niceAddress);
+        this.props.queryElectionData(niceAddress);
+      }
     };
 
     breakAddress = () => {
@@ -105,4 +123,4 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, { queryElectionData, calculateAddress })(AddressDisplay);
+export default connect(mapStateToProps, { queryElectionData })(AddressDisplay);
