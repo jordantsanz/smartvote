@@ -1,26 +1,42 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable func-names */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import $ from 'jquery';
 import { saveCheckedElections } from '../actions';
 
 class ElectionsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      electionsOfInterest: {},
       checkedItems: new Map(),
     };
   }
 
 selectAll = () => {
-
+  $(':checkbox').prop('checked', true);
+  $(':checkbox').each((checkbox) => {
+    this.setState((prevState) => ({
+      checkedItems: prevState.checkedItems.set(checkbox.toString(), true),
+    }));
+    $(`#${checkbox}`).parent().parent().parent()
+      .css('box-shadow', '4px 4px 20px rgba(239, 35, 60, .3)');
+  });
 }
 
 deselectAll = () => {
-
+  $(':checkbox').prop('checked', false);
+  $(':checkbox').each((checkbox) => {
+    this.setState((prevState) => ({
+      checkedItems: prevState.checkedItems.set(checkbox.toString(), false),
+    }));
+    $(`#${checkbox}`).parent().parent().parent()
+      .css('box-shadow', '0px 0px 0px 0px transparent');
+  });
 }
 
 // Checkbox Change
@@ -29,6 +45,13 @@ handleCheckboxChange = (event) => {
   const { id } = event.target;
 
   this.setState((prevState) => ({ checkedItems: prevState.checkedItems.set(id, isChecked) }));
+  if (isChecked) {
+    $(`#${id}`).parent().parent().parent()
+      .css('box-shadow', '4px 4px 20px rgba(239, 35, 60, .3)');
+  } else {
+    $(`#${id}`).parent().parent().parent()
+      .css('box-shadow', '0px 0px 0px 0px transparent');
+  }
 }
 
 // Checkboxes submit
@@ -41,14 +64,15 @@ submitChecks = () => {
     }
   }
 
-  const electionsOfInterest = {
-    elections,
-  };
+  if (elections.length == 0) {
+    console.log('uhoh');
+  } else {
+    const electionsOfInterest = {
+      elections,
+    };
 
-  this.setState(electionsOfInterest); // need to pass somewhere or something
-  console.log(this.state.electionsOfInterest);
-  console.log(electionsOfInterest);
-  this.props.saveCheckedElections(electionsOfInterest);
+    this.props.saveCheckedElections(electionsOfInterest);
+  }
 }
 
 candidatesList = (election) => {
@@ -95,8 +119,8 @@ render() {
         <h1 className="title" id="page-5-title">Here&apos;s a list of your upcoming elections...</h1>
         <div className="paragraph" id="tell-us-which">Tell us which elections you want us to generate recommendations for by selecting their checkbox.</div>
         <div className="button-holders" id="page-5-button-holder">
-          <button className="button-white" type="button" id="select-all" onClick={this.selectAll}>Deselect all</button>
-          <button className="button-red" type="button" id="deselect-all" onClick={this.deselectAll}>Select all</button>
+          <button className="button-white" type="button" id="deselect-all" onClick={this.deselectAll}>Deselect all</button>
+          <button className="button-red" type="button" id="select-all" onClick={this.selectAll}>Select all</button>
         </div>
         <div className="checkbox-cards-list">
           {this.electionDataRender()}

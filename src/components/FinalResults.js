@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -52,6 +53,11 @@ const results = {
 };
 
 class FinalResults extends Component {
+  constructor(props) {
+    super(props);
+    this.description = React.createRef();
+  }
+
     finalResults = () => {
       return results.elections.map((election) => {
         console.log(election);
@@ -65,13 +71,22 @@ class FinalResults extends Component {
       window.print();
     }
 
+    scrollDown = () => {
+      if (this.description.current) {
+        this.description.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }
+    }
+
     render() {
       return (
         <div className="page-wrapper" id="page-8">
           <div className="main-page-holder" id="double-height">
             <div className="page-starter">
               <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
-              <div className="red-arrow" />
+              <div className="red-arrow" onClick={this.scrollDown} />
             </div>
           </div>
           <div className="page-recommendations">
@@ -81,7 +96,7 @@ class FinalResults extends Component {
                 Click any of the recommendations to see more!
               </p>
 
-              <div className="final-cards-holder">
+              <div className="final-cards-holder" ref={this.description}>
                 {this.finalResults()}
               </div>
               <div className="button-holder">

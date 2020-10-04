@@ -39,7 +39,6 @@ class ElectionCard extends Component {
     const candidateName = candidate.name;
     const candidateParty = candidate.party[0];
     const fixedName = `${candidateName} (${candidateParty})`;
-    console.log(fixedName);
     return fixedName;
   }
 
@@ -62,8 +61,6 @@ class ElectionCard extends Component {
         maxName = candidate.name;
       }
     }
-
-    console.log(maxName);
     return maxName;
   }
 
@@ -78,7 +75,6 @@ class ElectionCard extends Component {
       }
     }
 
-    console.log(maxName);
     // eslint-disable-next-line eqeqeq
     return (this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.needs_score.toString());
   }
@@ -94,7 +90,6 @@ class ElectionCard extends Component {
       }
     }
 
-    console.log(maxName);
     // eslint-disable-next-line eqeqeq
     return (this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.values_score.toString());
   }
@@ -104,15 +99,12 @@ class ElectionCard extends Component {
     for (let valueIndex = 1; valueIndex < this.props.election.values.length; valueIndex++) {
       valuesString = `${valuesString}, ${this.props.election.values[valueIndex]}`;
     }
-    console.log(valuesString);
     return (
       <div className="valuesString">{valuesString}</div>
     );
   }
 
   render() {
-    console.log(this.props.election);
-    console.log(this.props.election.candidates);
     return (
       <div key={this.props.election.id} className="checkbox-card">
         <h1 className="election-title">{this.props.election.office} </h1>
@@ -126,6 +118,8 @@ class ElectionCard extends Component {
             className="modal"
             overlayClassName="overlay"
             ariaHideApp={false}
+            closeTimeoutMS={100}
+            onRequestClose={this.handleCloseModal}
           >
             <div className="modal-main">
               <div className="modal-upper-row">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 import { calculatePersonalityWithText } from '../actions';
 
 class WriteInfo extends Component {
@@ -18,7 +18,21 @@ saveAnswer = (event) => {
 }
 
   submitAnswer = () => {
-    this.props.calculatePersonalityWithText(this.props.electionData, this.state.writtenAnswer);
+    let words = 0;
+    console.log(this.state.writtenAnswer);
+    const array = this.state.writtenAnswer.split(' ');
+    console.log(array);
+    words = array.length;
+
+    console.log(words);
+
+    if (words >= 100) {
+      this.props.calculatePersonalityWithText(this.props.electionData, this.state.writtenAnswer);
+      this.props.history.push('/loadingfinal');
+    } else {
+      $('.error-message-box').delay(200).fadeIn(200).delay(2500)
+        .fadeOut();
+    }
   }
 
   render() {
@@ -30,9 +44,10 @@ saveAnswer = (event) => {
             “What is most important to you in life?”
           </h2>
           <textarea onChange={this.saveAnswer} />
-          <NavLink to="/loadingfinal">
-            <button type="button" id="submit-answer" className="button-red" onClick={this.submitAnswer}>Submit</button>
-          </NavLink>
+          <button type="button" id="submit-answer" className="button-red" onClick={this.submitAnswer}>Submit</button>
+          <div className="error-message-box">
+            <div className="error">Uh oh! Please enter in at least 100 words.</div>
+          </div>
         </div>
       </div>
     );

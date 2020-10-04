@@ -404,6 +404,8 @@ min-height: 259px;
 margin-left: 10px;
 margin-right: 10px;
 height: fit-content;
+transition: 200ms ease all;
+box-shadow: 0px 0px 0px 0px transparent;
 
 background: $navy;
 /* Red Glow */
@@ -629,6 +631,35 @@ line-height: 23px;
 color: #0E103D;
 }
 
+.error-message-box{
+display: none;
+align-self: center;
+justify-self: center;
+transition: 100ms ease all;
+background: #F4F4F9;
+border: 2px solid #EF233C;
+box-sizing: border-box;
+border-radius: 10px;
+text-align: center;
+width: 634px;
+height: 53px;
+margin-top: 6px;
+}
+
+#page-7{
+  height: 135%;
+}
+
+.error{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+color: #EF233C;
+
+}
+
 /***************************************************************** Final Results ***************************/
 #page-8-title{
   
@@ -646,7 +677,11 @@ height: 100%;
 }
 
 .page-starter{
-  height: 175vh;
+  height: 115vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -704,6 +739,51 @@ color: #009BDE;
 }
 #double-height{
   height: 200%;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.red-arrow{
+  background-image: url('./images/redarrow.svg');
+  width: 121px;
+  height: 40px;
+  position: absolute;
+  top: 85vh;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+		        transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-12px);
+		        transform: translateY(-12px);
+	}
+}
+
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
 }
 
 #final-description{
