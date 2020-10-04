@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/dnssec/dps/ksk-operator/ksk-dps.txt",
+    "uniqueKey": "https://www.iana.org/dnssec/dps/ksk-operator/ksk-dps.txt",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "EYjzcijJMmL3YPj"
+}

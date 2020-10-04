@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/restconf-capability-urns/restconf-capability-urns.xhtml#restconf-index-urns",
+    "uniqueKey": "https://www.iana.org/assignments/restconf-capability-urns/restconf-capability-urns.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "Zy06PHtKY6N79RI"
+}

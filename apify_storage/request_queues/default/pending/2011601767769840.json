@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/webauthn/webauthn.xhtml#webauthn-attestation-statement-format-ids",
+    "uniqueKey": "https://www.iana.org/assignments/webauthn/webauthn.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "xwSy3JUoCPsglzo"
+}

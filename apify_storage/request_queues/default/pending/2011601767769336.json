@@ -1,0 +1,11 @@
+{
+    "url": "https://www.iana.org/assignments/scim/scim.xhtml#data-resources",
+    "uniqueKey": "https://www.iana.org/assignments/scim/scim.xhtml",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 0,
+    "errorMessages": [],
+    "headers": {},
+    "userData": {},
+    "id": "TlRYd5fPjEkIw3y"
+}

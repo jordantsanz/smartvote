@@ -1,0 +1,14 @@
+{
+    "id": "0CFgzndAzSnyHwK",
+    "url": "https://www.iana.org/go/rfc6116",
+    "loadedUrl": "about:blank",
+    "uniqueKey": "https://www.iana.org/go/rfc6116",
+    "method": "GET",
+    "noRetry": false,
+    "retryCount": 1,
+    "errorMessages": [
+        "Error: Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.\n    at CDPSession.send (/Users/sathvika/Desktop/ivyhacks/node_modules/puppeteer/lib/cjs/puppeteer/common/Connection.js:195:35)\n    at ExecutionContext._evaluateInternal (/Users/sathvika/Desktop/ivyhacks/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:200:50)\n    at ExecutionContext.evaluate (/Users/sathvika/Desktop/ivyhacks/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:106:27)\n    at DOMWorld.evaluate (/Users/sathvika/Desktop/ivyhacks/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js:79:24)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+    ],
+    "headers": {},
+    "userData": {}
+}
