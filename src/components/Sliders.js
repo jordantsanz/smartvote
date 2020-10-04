@@ -49,17 +49,21 @@ class Sliders extends Component {
     // call to database to store all 5 values??? or can we keep them in the front end???
   }
 
+  stop = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="sliders">
         <div>Self-transcendence / Helping others</div>
-        <input type="range" id="value1" name="value" min="0" max="100" defaultValue="50" onInput={this.getValue1} />
+        <input type="range" id="value1" name="value" min="0" max="100" disabled="true" defaultValue="50" onInput={this.getValue1} />
         <div>{this.state.value1}</div>
         <div>Conservation / Tradition</div>
         <input type="range" id="value2" name="value" min="0" max="100" defaultValue="50" onInput={this.getValue2} />
         <div>{this.state.value2}</div>
         <div>Hedonism / Taking pleasure in life</div>
-        <input type="range" id="value3" name="value" min="0" max="100" defaultValue="50" onInput={this.getValue3} />
+        <input type="range" id="value3" name="value" min="0" max="100" onChange={this.stop} defaultValue="50" onInput={this.getValue3} />
         <div>{this.state.value3}</div>
         <div>Self-enhancement / Achieving success</div>
         <input type="range" id="value4" name="value" min="0" max="100" defaultValue="50" onInput={this.getValue4} />

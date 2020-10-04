@@ -18,7 +18,9 @@ class AboutUser extends Component {
             <NavLink to="/write">
               <button type="button" className="button-white" id="write-a-response">Write a response</button>
             </NavLink>
-            <button type="button" className="button-white" id="values-button">Choose my values </button>
+            <NavLink to="/sliders">
+              <button type="button" className="button-white" id="values-button">Choose my values </button>
+            </NavLink>
           </div>
         </div>
       </div>
