@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { calculatePersonalityWithText } from '../actions';
 import ElectionCard from './ElectionCard';
 
 class FinalResults extends Component {
@@ -60,4 +59,4 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(mapStateToProps, calculatePersonalityWithText)(FinalResults);
+export default connect(mapStateToProps, null)(FinalResults);

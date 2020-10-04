@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { calculateAddress } from '../actions';
 
 class AddressFinderScreen extends Component {
@@ -20,7 +21,9 @@ class AddressFinderScreen extends Component {
           <div className="main-page-holder">
             <h1 className="title" id="page-1-title">Let&apos;s check out your elections.</h1>
             <button onClick={this.findLocation} className="button-red" type="button" id="find-your-address-button">Find my district</button>
-            <h2 className="button-subtitle">Or enter in your address manually</h2>
+            <NavLink to="/addressinput" class="link">
+              <h2 className="button-subtitle">Or enter in your address manually</h2>
+            </NavLink>
           </div>
         </div>
       );

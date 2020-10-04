@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const resultsReducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case ActionTypes.GET_RECOMMENDATION:
       return {
