@@ -12,7 +12,7 @@ export const ActionTypes = {
 const CIVIC_API_URL = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
 const GEOCODING_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json?key=';
 const GOOGLE_KEY = 'AIzaSyC-hLGCLH9_wYA5ZyLKNrG-57VT6rRkb5A';
-const BACKEND_API_URL = 'http://localhost:8081/api';
+const BACKEND_API_URL = 'https://ivyhacks-api.herokuapp.com/api';
 
 // returns all elections that user can participate in
 export function queryElectionData(address) {
