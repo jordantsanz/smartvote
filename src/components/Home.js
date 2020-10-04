@@ -10,10 +10,17 @@ class Home extends Component {
     return (
       <div className="page-wrapper" id="page-0">
         <div className="main-page-holder">
-          <h1 className="title" id="page-0-title">Vote smarter.</h1>
-          <NavLink to="/findlocation">
-            <button type="button" className="button-red" id="get-started-button">Get started</button>
-          </NavLink>
+          <div className="main-page-title">
+            <img className="vote-image" src="src/images/VoteSticker.svg" alt="vote" />
+            <div className="right-side">
+              <h1 className="title" id="page-0-title">Smarter.</h1>
+              <NavLink to="/findlocation">
+                <button type="button" className="button-white" id="get-started-button">Get started</button>
+              </NavLink>
+            </div>
+
+          </div>
+
         </div>
       </div>
     );

@@ -44,7 +44,7 @@ class FinalResults extends Component {
               </div>
               {this.finalResults()}
               <NavLink to="/">
-                <button className="button" type="button">Start over</button>
+                <button className="button-red" id="submit-sliders" type="button">Start over</button>
               </NavLink>
             </div>
           </div>

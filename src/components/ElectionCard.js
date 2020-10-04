@@ -60,7 +60,7 @@ class ElectionCard extends Component {
         <div className="modal-flex">
           <ReactModal
             isOpen={this.state.showModal}
-            contentLabel="Minimal Modal Example"
+            contentLabel="ResultModal"
             className="modal"
             overlayClassName="overlay"
             ariaHideApp={false}

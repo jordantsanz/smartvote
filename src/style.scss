@@ -12,6 +12,10 @@ $mono: 'DM Mono', monospace;
 body, html {
     font-family: $suez;
     height: 100%;
+    box-sizing: content-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
 .page-wrapper{
@@ -31,16 +35,10 @@ body, html {
   height: 100%;
 }
 
-#page-0{
-  justify-content: space-around;
-  align-items: center;
-}
-
 .button-red{
 background: $red;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;
-
 font-family: $mono;
 font-style: normal;
 font-weight: 500;
@@ -114,9 +112,34 @@ font-weight: normal;
 font-size: 144px;
 line-height: 188px;
 text-align: center;
-color: $lightblue;
+color: $navy;
 margin-bottom: 0px;
-margin-top: 27.8vh;
+margin-top: 18vh;
+
+}
+#page-0{
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("images/ClassicalBuildingBG.png");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-position: center;
+  height: 100vh;
+}
+
+.vote-image{
+  width: 500px;
+  height: 500px;
+}
+
+#get-started-button{
+  border-color: transparent;
+}
+
+.main-page-title{
+  display: flex;
+  flex-direction: row;
 }
 
 /*************************************************** Address finder page ********************************/
@@ -846,6 +869,23 @@ text-align: center;
 /* LIGHT BLUE */
 
 color: #009BDE;
+}
+
+.similar{
+  font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+text-align: center;
+
+/* GHOST */
+
+color: #F4F4F9;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open.modal:focus{
+outline: none;
 }
 
 
