@@ -442,6 +442,10 @@ text-align: center;
 color: #F4F4F9;
 }
 
+#error-electionscreen{
+  position: fixed;
+}
+
 .candidates-list{
 display: flex;
 flex-direction: column;
@@ -458,12 +462,32 @@ margin-bottom: 15px;
 
 .button-nav{
   position: fixed;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     top: 85vh;
     text-decoration: none;
+    width: 292px;
+height: 53px;
+border-color: transparent;
+text-transform: uppercase;
+font-family: $mono;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 23px;
+align-self: center;
+justify-self: center;
+text-align: center;
+
+color: #F4F4F9;
+
+background: #EF233C;
+/* Red Glow */
+
+box-shadow: 4px 4px 20px rgba(239, 35, 60, 0.25);
+border-radius: 30px;
 }
 a{
   text-decoration: none;

@@ -5,7 +5,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
 import { saveCheckedElections } from '../actions';
 
@@ -65,13 +64,15 @@ submitChecks = () => {
   }
 
   if (elections.length == 0) {
-    console.log('uhoh');
+    $('.error-message-box').delay(200).fadeIn(200).delay(2500)
+      .fadeOut();
   } else {
     const electionsOfInterest = {
       elections,
     };
 
     this.props.saveCheckedElections(electionsOfInterest);
+    this.props.history.push('/aboutyou');
   }
 }
 
@@ -125,9 +126,10 @@ render() {
         <div className="checkbox-cards-list">
           {this.electionDataRender()}
         </div>
-        <NavLink className="button-nav" to="/aboutyou">
-          <button type="button" className="button-red" id="fixed-button" onClick={this.submitChecks}>Continue</button>
-        </NavLink>
+        <div className="error-message-box" id="error-electionscreen">
+          <div className="error">Uh oh! Please enter in at least 100 words.</div>
+        </div>
+        <button type="button" className="button-nav" id="fixed-button" onClick={this.submitChecks}>Get recommendations</button>
       </div>
     </div>
   );

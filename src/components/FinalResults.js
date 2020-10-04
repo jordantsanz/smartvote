@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -83,6 +84,9 @@ class FinalResults extends Component {
     render() {
       return (
         <div className="page-wrapper" id="page-8">
+          <video width="400" controls autoPlay>
+            <source src="src/images/ballotbox_anim.mp4" type="video/mp4" />
+          </video>
           <div className="main-page-holder" id="double-height">
             <div className="page-starter">
               <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
