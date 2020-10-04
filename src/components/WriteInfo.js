@@ -46,7 +46,7 @@ saveAnswer = (event) => {
           <textarea onChange={this.saveAnswer} />
           <button type="button" id="submit-answer" className="button-red" onClick={this.submitAnswer}>Submit</button>
           <div className="error-message-box">
-            <div className="error">Uh oh! Please enter in at least 100 words.</div>
+            <div className="error">Please make sure your submission is at least 100 words.</div>
           </div>
         </div>
       </div>

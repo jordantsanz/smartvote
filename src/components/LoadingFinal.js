@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable eqeqeq */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { setRecommendations } from '../actions';
+import video from '../images/switcheroo_h264.mp4';
 
 const results = {
   elections: [
@@ -79,6 +81,9 @@ class LoadingFinal extends Component {
     if (this.props.results.length == 0 || this.props.results == undefined) {
       return (
         <div className="page-wrapper" id="page-4">
+          <video width="320" height="240" loop autoPlay muted id="video">
+            <source src={video} type="video/mp4" />
+          </video>
           <h1 className="title" id="page-4-title"> Finding your election... </h1>
         </div>
       );

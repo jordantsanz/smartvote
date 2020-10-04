@@ -127,7 +127,7 @@ render() {
           {this.electionDataRender()}
         </div>
         <div className="error-message-box" id="error-electionscreen">
-          <div className="error">Uh oh! Please enter in at least 100 words.</div>
+          <div className="error">Please select at least one election. </div>
         </div>
         <button type="button" className="button-nav" id="fixed-button" onClick={this.submitChecks}>Get recommendations</button>
       </div>

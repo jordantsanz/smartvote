@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <div className="page-wrapper" id="page-0">
-        <div className="main-page-holder">
+        <div className="main-page-holder" id="no-image">
           <div className="main-page-title">
             <img className="vote-image" src="src/images/VoteSticker.svg" alt="vote" />
             <div className="right-side">

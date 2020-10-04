@@ -16,7 +16,18 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
+
+video {
+  position: fixed;
+  width: 100%;
+  height:100%;
+  z-index: -100;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
 
 .page-wrapper{
   display: flex;
@@ -32,8 +43,32 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: max-content;
+  display: flex;
+  text-align: center;
+  background-image: url("images/vectors_bg_regular.png");
+  background-size: cover;
+  width: auto;
+  background-attachment: fixed;
+  position: relative;
+  background-position: center;
 }
+
+.main-page-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+  display: flex;
+  text-align: center;
+  background-image: url("images/vectors_bg_regular.png");
+  background-size: cover;
+  width: auto;
+  background-attachment: fixed;
+  position: relative;
+  background-position: center;
+}
+
 
 .button-red{
 background: $red;
@@ -120,12 +155,16 @@ margin-top: 18vh;
 #page-0{
   justify-content: space-around;
   align-items: center;
-  background-image: url("images/ClassicalBuildingBG.png");
+  background-image: url("images/homepage_w_vectors.png");
   background-size: cover;
   background-attachment: fixed;
   position: relative;
   background-position: center;
   height: 100vh;
+}
+
+#no-image{
+  background-image: none;
 }
 
 .vote-image{
@@ -181,7 +220,7 @@ transition: 100ms ease all;
   text-align: center;
   margin-bottom: 0px;
   color: $lightblue;
-  margin-top: 22vh;
+  margin-top: 5vh;
 }
 
 #formatted-address, #formatted-address2{
@@ -685,6 +724,10 @@ color: #EF233C;
 }
 
 /***************************************************************** Final Results ***************************/
+
+#page-8{
+  align-items: center;
+}
 #page-8-title{
   
 font-family: $suez;
@@ -696,6 +739,7 @@ text-align: center;
 
 color: #009BDE;
 margin-bottom: 0px;
+margin-top: 45vh;
 width: 900px;
 height: 100%;
 }
@@ -1049,6 +1093,13 @@ outline: none;
   margin-right: 10px;
   width: 175px;
 height: 48px;
+}
+
+.page-recommendations{
+  z-index: 4;
+  background-color: $ghost;
+  height: 102vh;
+  width: 100%;
 }
 
 /*************************************************** Sliders page ************************************/

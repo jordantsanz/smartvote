@@ -7,7 +7,7 @@ class AboutUser extends Component {
   render() {
     return (
       <div className="page-wrapper" id="page-6">
-        <div className="main-page-holder">
+        <div className="main-page-holder" id="page-6-wrapper">
           <h1 className="title" id="page-6-title">Now, you!</h1>
           <p className="subtitle-text" id="subtitle-text">In order to generate your recommendations,
             we’ll need to learn a little bit more about who you are and what you care about!

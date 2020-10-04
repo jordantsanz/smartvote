@@ -1,10 +1,21 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { VideoScroll } from 'react-video-scroll';
 import ElectionCard from './ElectionCard';
+import video from '../images/ballotbox_h264.mp4';
 
+const setStyles = (wrapperEl, videoEl, playbackRate) => {
+  wrapperEl.style.marginTop = `calc(180% - ${`${Math.floor(videoEl.duration)
+    * playbackRate
+  }px`})`;
+  wrapperEl.style.marginBottom = `calc(180% - ${`${Math.floor(videoEl.duration)
+    * playbackRate
+  }px`})`;
+};
 const results = {
   elections: [
     {
@@ -84,12 +95,24 @@ class FinalResults extends Component {
     render() {
       return (
         <div className="page-wrapper" id="page-8">
-          <video width="400" controls autoPlay>
-            <source src="src/images/ballotbox_anim.mp4" type="video/mp4" />
-          </video>
+          <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
+          <VideoScroll
+            onLoad={(props) => setStyles(props.wrapperEl, props.videoEl, props.playbackRate)}
+            playbackRate={1500}
+          >
+            <video
+              tabIndex="0"
+              autobuffer="autobuffer"
+              preload="preload"
+              style={{ width: '100%' }}
+              id="video"
+            >
+              <source src={video} type="video/mp4" />
+            </video>
+          </VideoScroll>
+
           <div className="main-page-holder" id="double-height">
             <div className="page-starter">
-              <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
               <div className="red-arrow" onClick={this.scrollDown} />
             </div>
           </div>
