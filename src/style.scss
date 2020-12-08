@@ -39,6 +39,15 @@ video {
   height: 100%;
 }
 
+#subtitle-temp{
+  font-size: 20px;
+  color: $ghost;
+  margin-top: 0px;
+  font-family: $mono;
+  left: 39vw;
+  position: absolute;
+}
+
 .main-page-holder{
   display: flex;
   flex-direction: column;
@@ -91,7 +100,7 @@ video {
 display: flex;
 flex-direction: column;
 align-items: center;
-height: 102%;
+height: max-content;
 display: flex;
 text-align: center;
 background-image: url("images/vectors_bg_regular.png");

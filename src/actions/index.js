@@ -55,12 +55,13 @@ export function setAddress(address) {
   };
 }
 
-export function calculatePersonalityWithText(elections, userText) {
+export function calculatePersonalityWithText(elections, userText, history) {
   return (dispatch) => {
     axios.put(`${BACKEND_API_URL}/text-recommendations`, { elections, userText }).then((response) => {
+      console.log(response);
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
-      console.log(response.data);
-      console.log('OHOASHDFOASDHF');
+      history.push('/results');
+      console.log('hello i pushed');
     })
       .catch((error) => {
         return error;
@@ -68,10 +69,12 @@ export function calculatePersonalityWithText(elections, userText) {
   };
 }
 
-export function calculatePersonalityWithSliders(elections, user) {
+export function calculatePersonalityWithSliders(elections, user, history) {
   return (dispatch) => {
     axios.put(`${BACKEND_API_URL}/slide-recommendations`, { elections, user }).then((response) => {
+      console.log(response);
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
+      history.push('/loadingfinal');
     })
       .catch((error) => {
         return error;

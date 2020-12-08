@@ -20,6 +20,7 @@ class LoadingElection extends Component {
   }
 
   render() {
+    console.log(this.props.electionData);
     if (!this.state.render) {
       return (
         <div className="page-wrapper" id="page-4">
@@ -57,7 +58,7 @@ class LoadingElection extends Component {
 function mapStateToProps(reduxState) {
   return {
     // address: reduxState.address,
-    electionData: reduxState.electionData.contests,
+    electionData: reduxState.electionData,
     location: reduxState.location,
   };
 }

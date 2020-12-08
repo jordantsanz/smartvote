@@ -24,9 +24,7 @@ class FinalResults extends Component {
   }
 
     finalResults = () => {
-      console.log(this.props.elections.results.elections);
-      return this.props.elections.results.elections.map((election) => {
-        console.log(election);
+      return this.props.newResults.elections.map((election) => {
         return (
           <ElectionCard election={election} />
         );
@@ -47,6 +45,7 @@ class FinalResults extends Component {
     }
 
     render() {
+      console.log(this.props.newResults);
       return (
         <div className="page-wrapper" id="page-8">
           <h1 className="title" id="page-8-title">Your recommendations are ready!</h1>
@@ -97,7 +96,8 @@ class FinalResults extends Component {
 
 function mapStateToProps(reduxState) {
   return {
-    elections: reduxState.results,
+    results: reduxState.results.electionResults,
+    newResults: reduxState.newResults.electionResults,
   };
 }
 

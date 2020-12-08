@@ -1,19 +1,20 @@
 import { ActionTypes } from '../actions';
 
 const initialState = {
-  newResults: {},
+  electionResults: {},
 };
 
 const newResultsReducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case ActionTypes.SET_RECOMMENDATIONS:
+      console.log(action.payload);
       return {
-        newResults: action.payload,
+
+        electionResults: action.payload,
       };
     default:
       return {
-        newResults: state,
+        electionResults: initialState.electionResults,
       };
   }
 };

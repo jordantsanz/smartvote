@@ -5,7 +5,7 @@
 /* eslint-disable camelcase */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { calculatePersonalityWithSliders } from '../actions';
 
 class Sliders extends Component {
@@ -110,7 +110,7 @@ class Sliders extends Component {
       values,
     };
     console.log(user);
-    this.props.calculatePersonalityWithSliders(this.props.electionData, user);
+    this.props.calculatePersonalityWithSliders(this.props.electionData, user, this.props.history);
   }
 
   returnSlider = (title, paragraph, value, need) => {
@@ -183,9 +183,9 @@ class Sliders extends Component {
             {this.returnSlider('selfEnhancement', 'Seek personal success for themselves.', 50, false)}
             {this.returnSlider('openToChange', 'Emphasize independent action, thought, and feeling, as well as a readiness for new experiences.', 50, false)}
           </div>
-          <NavLink to="/loadingfinal">
-            <button type="button" className="button-red" id="submit-sliders" onClick={this.onSubmit}>Submit</button>
-          </NavLink>
+          {/* <NavLink to="/loadingfinal"> */}
+          <button type="button" className="button-red" id="submit-sliders" onClick={this.onSubmit}>Submit</button>
+          {/* </NavLink> */}
         </div>
       </div>
     );
