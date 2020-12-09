@@ -60,8 +60,7 @@ export function calculatePersonalityWithText(elections, userText, history) {
     axios.put(`${BACKEND_API_URL}/text-recommendations`, { elections, userText }).then((response) => {
       console.log(response);
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
-      history.push('/results');
-      console.log('hello i pushed');
+      history.push('/loadingfinal');
     })
       .catch((error) => {
         return error;
@@ -74,6 +73,7 @@ export function calculatePersonalityWithSliders(elections, user, history) {
     axios.put(`${BACKEND_API_URL}/slide-recommendations`, { elections, user }).then((response) => {
       console.log(response);
       dispatch({ type: ActionTypes.GET_RECOMMENDATION, payload: response.data });
+      console.log('puspusphs');
       history.push('/loadingfinal');
     })
       .catch((error) => {

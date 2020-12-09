@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { NavLink } from 'react-router-dom';
 import { calculatePersonalityWithSliders } from '../actions';
+import video from '../images/switcheroo_h264.mp4';
 
 class Sliders extends Component {
   constructor(props) {
@@ -34,6 +35,8 @@ class Sliders extends Component {
       stability: 50,
       challenge: 50,
       structure: 50,
+
+      doneRendering: false,
 
     };
 
@@ -80,6 +83,9 @@ class Sliders extends Component {
 
   onSubmit = () => {
     window.scrollTo(0, 0);
+    this.setState({
+      doneRendering: true,
+    });
     // call to database to store all 5 values??? or can we keep them in the front end???
     const needs = [];
     const needsList = ['excitement', 'harmony', 'curiosity', 'ideal', 'closeness', 'selfExpression', 'liberty', 'love', 'practicality', 'stability', 'challenge', 'structure'];
@@ -153,42 +159,57 @@ class Sliders extends Component {
   }
 
   render() {
-    return (
-      <div className="page-wrapper" id="page-sliders">
-        <div className="main-page-holder" id="sliders-main-page">
-          <h1 className="title" id="page-sliders-title">Tell us about your needs and values.</h1>
-          <p className="subtitle" id="sliders-main-description">Slide the marker on the scales below to
-            rate how much each need or value is important to you. We’ll use these values to determine your personality profile.
-          </p>
-          <div className="slider-section">
-            <h2 className="section-title" id="needs-title">Needs</h2>
-            {this.returnSlider('excitement', 'Want to get out there and live life, have upbeat emotions, and want to have fun.', 50, true)}
-            {this.returnSlider('harmony', 'Appreciate other people, their viewpoints, and their feelings.', 50, true)}
-            {this.returnSlider('curiosity', 'Have a desire to discover, find out, and grow.', 50, true)}
-            {this.returnSlider('ideal', 'Desire perfection and a sense of community.', 50, true)}
-            {this.returnSlider('closeness', 'Relish being connected to family and setting up a home.', 50, true)}
-            {this.returnSlider('self-expression', 'Enjoy discovering and asserting their own identities.', 50, true)}
-            {this.returnSlider('liberty', 'Have a desire for fashion and new things, as well as the need for escape.', 50, true)}
-            {this.returnSlider('love', 'Enjoy social contact, whether one-to-one or one-to-many. Any brand that is involved in bringing people together taps this need.', 50, true)}
-            {this.returnSlider('pracicality', 'Have a desire to get the job done, a desire for skill and efficiency, which can include physical expression and experience.', 50, true)}
-            {this.returnSlider('stability', 'Seek equivalence in the physical world. They favor the sensible,the tried and tested.', 50, true)}
-            {this.returnSlider('challenge', 'Have an urge to achieve, to succeed, and to take on challenges.', 50, true)}
-            {this.returnSlider('structure', 'Exhibit groundedness and a desire to hold things together. They need things to be well organized and under control.', 50, true)}
+    if (!this.state.doneRendering) {
+      return (
+        <div className="page-wrapper" id="page-sliders">
+          <div className="main-page-holder" id="sliders-main-page">
+            <h1 className="title" id="page-sliders-title">Tell us about your needs and values.</h1>
+            <p className="subtitle" id="sliders-main-description">Slide the marker on the scales below to
+              rate how much each need or value is important to you. We’ll use these values to determine your personality profile.
+            </p>
+            <div className="slider-section">
+              <h2 className="section-title" id="needs-title">Needs</h2>
+              {this.returnSlider('excitement', 'Want to get out there and live life, have upbeat emotions, and want to have fun.', 50, true)}
+              {this.returnSlider('harmony', 'Appreciate other people, their viewpoints, and their feelings.', 50, true)}
+              {this.returnSlider('curiosity', 'Have a desire to discover, find out, and grow.', 50, true)}
+              {this.returnSlider('ideal', 'Desire perfection and a sense of community.', 50, true)}
+              {this.returnSlider('closeness', 'Relish being connected to family and setting up a home.', 50, true)}
+              {this.returnSlider('self-expression', 'Enjoy discovering and asserting their own identities.', 50, true)}
+              {this.returnSlider('liberty', 'Have a desire for fashion and new things, as well as the need for escape.', 50, true)}
+              {this.returnSlider('love', 'Enjoy social contact, whether one-to-one or one-to-many. Any brand that is involved in bringing people together taps this need.', 50, true)}
+              {this.returnSlider('pracicality', 'Have a desire to get the job done, a desire for skill and efficiency, which can include physical expression and experience.', 50, true)}
+              {this.returnSlider('stability', 'Seek equivalence in the physical world. They favor the sensible,the tried and tested.', 50, true)}
+              {this.returnSlider('challenge', 'Have an urge to achieve, to succeed, and to take on challenges.', 50, true)}
+              {this.returnSlider('structure', 'Exhibit groundedness and a desire to hold things together. They need things to be well organized and under control.', 50, true)}
+            </div>
+            <div className="slider-section">
+              <h2 className="section-title" id="values-title">Values</h2>
+              {this.returnSlider('helpingOthers', 'Show concern for the welfare and interests of others.', 50, false)}
+              {this.returnSlider('tradition', 'Emphasize self-restriction, order, and resistance to change.', 50, false)}
+              {this.returnSlider('pleasure', 'Seek pleasure and sensuous gratification for themselves.', 50, false)}
+              {this.returnSlider('selfEnhancement', 'Seek personal success for themselves.', 50, false)}
+              {this.returnSlider('openToChange', 'Emphasize independent action, thought, and feeling, as well as a readiness for new experiences.', 50, false)}
+            </div>
+            <div>
+              <button type="button" className="button-red" id="submit-sliders" onClick={this.onSubmit}>Submit</button>
+            </div>
           </div>
-          <div className="slider-section">
-            <h2 className="section-title" id="values-title">Values</h2>
-            {this.returnSlider('helpingOthers', 'Show concern for the welfare and interests of others.', 50, false)}
-            {this.returnSlider('tradition', 'Emphasize self-restriction, order, and resistance to change.', 50, false)}
-            {this.returnSlider('pleasure', 'Seek pleasure and sensuous gratification for themselves.', 50, false)}
-            {this.returnSlider('selfEnhancement', 'Seek personal success for themselves.', 50, false)}
-            {this.returnSlider('openToChange', 'Emphasize independent action, thought, and feeling, as well as a readiness for new experiences.', 50, false)}
-          </div>
-          {/* <NavLink to="/loadingfinal"> */}
-          <button type="button" className="button-red" id="submit-sliders" onClick={this.onSubmit}>Submit</button>
-          {/* </NavLink> */}
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="page-wrapper" id="page-4">
+
+          <div className="special-main-page-holder" id="page-4-holder">
+            <video className="videoWhite" width="320" height="240" loop autoPlay muted id="video">
+              <source src={video} className="videoWhite" type="video/mp4" />
+            </video>
+            <h1 className="title" id="page-4-title"> Generating recommendations... </h1>
+            <button type="button" id="democracy" className="button-red">I love democracy!</button>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

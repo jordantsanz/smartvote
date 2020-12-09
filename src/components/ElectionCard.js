@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable camelcase */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-plusplus */
@@ -75,8 +76,12 @@ class ElectionCard extends Component {
       }
     }
 
-    // eslint-disable-next-line eqeqeq
-    return (this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.needs_score.toString());
+    const score = (this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.needs_score) * 100;
+    console.log(score);
+    Math.round(score);
+    console.log(score);
+
+    return score.toString();
   }
 
   findValuesScore = () => {
@@ -91,7 +96,9 @@ class ElectionCard extends Component {
     }
 
     // eslint-disable-next-line eqeqeq
-    return (this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.values_score.toString());
+    const score = this.props.election.candidates.filter((candidate) => candidate.name == maxName)[0].profile.values_score * 100;
+
+    return score.toString();
   }
 
   displayValues = () => {

@@ -16,38 +16,33 @@ class LoadingFinal extends Component {
     };
   }
 
-  componentDidMount() {
-    if (this.props.results.length != 0) {
-      this.findMaxes();
-    }
+ findMaxes = () => {
+   const elections = this.props.results;
+   const electionsNew = [];
+   console.log(elections);
+   for (let i = 0; i < elections.length; i++) {
+     const election = elections[i];
+     let maxScore = 0;
+     let maxName = '';
 
-    setTimeout(() => { // Start the timer
-      this.setState({ render: true }); // After 1 second, set render to true
-    }, 4000);
-  }
+     for (let j = 0; j < election.candidates.length; j++) {
+       const candidate = election.candidates[j];
+       if (candidate.profile.average_score > maxScore) {
+         maxScore = candidate.profile.average_score;
+         maxName = candidate.name;
+       }
+     }
+     election.recommendation = maxName;
+     electionsNew.push(election);
+   }
+   const resultsNew = { elections: electionsNew };
+   console.log('resultsNew:', resultsNew);
+   this.props.setRecommendations(resultsNew);
+   this.setState({ render: true });
+ };
 
-  findMaxes = () => {
-    const elections = this.props.results;
-    const electionsNew = [];
-    console.log(elections);
-    for (let i = 0; i < elections.length; i++) {
-      const election = elections[i];
-      let maxScore = 0;
-      let maxName = '';
-
-      for (let j = 0; j < election.candidates.length; j++) {
-        const candidate = election.candidates[j];
-        if (candidate.profile.average_score > maxScore) {
-          maxScore = candidate.profile.average_score;
-          maxName = candidate.name;
-        }
-      }
-      election.recommendation = maxName;
-      electionsNew.push(election);
-    }
-    const resultsNew = { elections: electionsNew };
-    console.log('resultsNew:', resultsNew);
-    this.props.setRecommendations(resultsNew);
+  componentDidMount = () => {
+    this.findMaxes();
   }
 
   render() {
