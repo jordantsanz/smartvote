@@ -1,7 +1,9 @@
 # IvyHacks
 
 ## Check it out
-Our project is deployed at https://smartvote.surge.sh/.
+Our project is deployed at https://smartvote.surge.sh/. 
+
+(Note: due to Google Maps API billing, SmartVote unfortunately will not work for the time being, since we cannot afford to pay for the Google Maps API. However, check out a video of our demo for IvyHacks 2020 [here](https://devpost.com/software/votesmart-9eqn8l)!) 
 
 ## Inspiration
 Our project was inspired by the experience of heading to the polls, excited to vote for your favorite headlining candidates but lacking any point of reference when it comes to the lesser-known local elections candidates. SmartVote hopes to help bridge this gap of knowledge through recommendations to our users based on the needs and values of the voter and the candidates - giving you the power to create your own voting guide.
